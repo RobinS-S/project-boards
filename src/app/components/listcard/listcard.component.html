@@ -1,0 +1,31 @@
+<div class="list-card col-lg-12 mb-2 px-0">
+  <nb-card>
+    <nb-card-body>
+      <div *ngIf="!editing || editingCardUuid !== card?.uuid">
+        <strong (click)="clickEdit.emit(card?.uuid)">
+          {{ card?.name }}
+        </strong>
+        <p (click)="clickEdit.emit(card?.uuid)">{{ card?.description }}</p>
+      </div>
+      <div *ngIf="editing && editingCardUuid === card?.uuid">
+        <nb-form-field>
+          <input type="text" nbInput [formControl]="nameInput" minlength="1" fullWidth required />
+        </nb-form-field>
+        <nb-form-field>
+          <input type="text" nbInput [formControl]="descriptionInput" fullWidth />
+        </nb-form-field>
+        <button nbButton fullWidth (click)="saveCard()">
+          <nb-icon icon="save-outline" pack="eva" attr.aria-label="Save"> </nb-icon>
+        </button>
+      </div>
+    </nb-card-body>
+    <nb-card-footer>
+      <div class="mt-1">
+        <nb-button-group size="small" multiple>
+          <button nbButton (click)="clickEdit.emit(card?.uuid)"><nb-icon icon="edit-outline"></nb-icon></button>
+          <button nbButton (click)="removeCard()"><nb-icon icon="trash-outline"></nb-icon></button>
+        </nb-button-group>
+      </div>
+    </nb-card-footer>
+  </nb-card>
+</div>

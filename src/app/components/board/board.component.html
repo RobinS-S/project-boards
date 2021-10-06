@@ -1,0 +1,24 @@
+<nb-card>
+  <nb-card-body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 h-100" *ngFor="let list of board?.lists">
+          <app-board-list
+            [boardUuid]="board?.uuid"
+            [list]="list"
+            [editingListUuid]="editingListUuid"
+            (clickEditList)="clickEdit($event)"
+            [editingList]="editing"
+            (saveList)="saveList()"
+          ></app-board-list>
+        </div>
+        <div class="col-lg-6 w-100 h-100">
+          <button class="py-5" fullWidth nbButton (click)="boardStore.addList(boardStore.currentBoard ?? '')">
+            <nb-icon icon="plus-outline"></nb-icon> Add list
+          </button>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+  <nb-card-footer> </nb-card-footer>
+</nb-card>

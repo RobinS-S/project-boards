@@ -1,0 +1,15 @@
+<div class="board-select__menu-item">
+  <nb-form-field *ngIf="editing && editingBoardUuid === board?.uuid">
+    <input type="text" nbInput [formControl]="nameInput" minlength="1" required />
+    <button nbSuffix nbButton size="small" (click)="saveNewName()" *ngIf="nameInput.value !== board?.name">
+      <nb-icon icon="save-outline" pack="eva" attr.aria-label="New name"> </nb-icon>
+    </button>
+  </nb-form-field>
+  <h6 *ngIf="!editing || editingBoardUuid !== board?.uuid" (click)="clickEdit.emit(board?.uuid)">{{ board?.name }}</h6>
+  <div class="mt-1">
+    <nb-button-group size="small" multiple>
+      <button nbButton (click)="clickEdit.emit(board?.uuid)"><nb-icon icon="edit-outline"></nb-icon></button>
+      <button nbButton (click)="removeBoard(board?.uuid)"><nb-icon icon="trash-outline"></nb-icon></button>
+    </nb-button-group>
+  </div>
+</div>

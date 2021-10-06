@@ -1,0 +1,11 @@
+@import "../../../themes";
+
+nb-card {
+  background-color: nb-theme(color-basic-900);
+}
+
+h6 {
+  &:hover {
+    cursor: text;
+  }
+}

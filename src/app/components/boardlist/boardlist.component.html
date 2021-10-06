@@ -1,0 +1,34 @@
+<nb-card>
+  <nb-card-header>
+    <h6 *ngIf="!editingList || editingListUuid !== list?.uuid" (click)="clickEditForList()">{{ list?.name }}</h6>
+    <nb-form-field *ngIf="editingList && editingListUuid === list?.uuid">
+      <input type="text" nbInput [formControl]="nameInput" minlength="1" required />
+      <button nbSuffix nbButton size="small" (click)="saveNewName()" *ngIf="nameInput.value !== list?.name">
+        <nb-icon icon="save-outline" pack="eva" attr.aria-label="New name"> </nb-icon>
+      </button>
+    </nb-form-field>
+    <div class="mt-1">
+      <nb-button-group size="small" multiple>
+        <button nbButton (click)="clickEditForList()"><nb-icon icon="edit-outline"></nb-icon></button>
+        <button nbButton (click)="removeList()"><nb-icon icon="trash-outline"></nb-icon></button>
+      </nb-button-group>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <app-list-card
+      *ngFor="let card of list?.cards"
+      [card]="card"
+      [editing]="editing"
+      [editingCardUuid]="editingCardUuid"
+      [listUuid]="list?.uuid"
+      [boardUuid]="boardUuid"
+      (clickEdit)="clickEdit($event)"
+      (saveCard)="saveCard()"
+    ></app-list-card>
+    <div class="px-0 w-100">
+      <button class="py-5" fullWidth nbButton (click)="createCard()">
+        <nb-icon icon="plus-outline"></nb-icon> Add card
+      </button>
+    </div>
+  </nb-card-body>
+</nb-card>

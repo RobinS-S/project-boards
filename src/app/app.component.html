@@ -1,0 +1,21 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <h2>WorkBoard</h2>
+    <router-outlet></router-outlet>
+  </nb-layout-header>
+
+  <nb-sidebar>
+    <app-boardselection [boards]="boardStore.boards$ | async"></app-boardselection>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <app-board
+      *ngIf="boardStore.currentBoard"
+      [board]="boardStore.boards | currentBoard: boardStore.currentBoard"
+    ></app-board>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+  </nb-layout-footer>
+</nb-layout>

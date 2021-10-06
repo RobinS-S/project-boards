@@ -1,0 +1,30 @@
+<nb-list>
+  <nb-list-item
+    *ngFor="let board of boards"
+    class="boardselection"
+    [ngClass]="{ 'boardselection--active': board?.uuid === boardStore.currentBoard }"
+    (click)="clickBoard(board?.uuid)"
+  >
+    <app-board-menu-item
+      [board]="board"
+      [editing]="editing"
+      [editingBoardUuid]="editingBoardUuid"
+      (clickEdit)="clickEdit($event)"
+      (saveBoard)="saveBoard()"
+    ></app-board-menu-item>
+  </nb-list-item>
+  <nb-list-item class="mt-1 p-0">
+    <button nbButton (click)="createBoard()" fullWidth><nb-icon icon="plus"></nb-icon> Add board</button>
+  </nb-list-item>
+  <nb-list-item class="mt-1 p-0">
+    <button nbButton (click)="boardStore.saveToLocalStorage()" fullWidth>
+      <nb-icon icon="save-outline"></nb-icon> Save to disk
+    </button>
+  </nb-list-item>
+  <nb-list-item>
+    <p>
+      Data is saved into your browser when you press the above button. Upon coming back to the page, the data is
+      automatically loaded from localStorage.
+    </p>
+  </nb-list-item>
+</nb-list>

@@ -1,0 +1,17 @@
+@import "../../../themes";
+
+.boardselection {
+  background-color: nb-theme(color-basic-700);
+
+  > button {
+    text-align: center;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.boardselection--active {
+  background-color: nb-theme(color-basic-600);
+}
