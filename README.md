@@ -1,4 +1,6 @@
-# GekkeAngularApp
+# Project Boards
+
+This app was only an experiment, please do not take the code too seriously. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
