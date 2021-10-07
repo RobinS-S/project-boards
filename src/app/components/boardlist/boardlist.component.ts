@@ -8,7 +8,7 @@ import BoardList from "../../classes/boardlist";
   templateUrl: "./boardlist.component.html",
   styleUrls: ["./boardlist.component.scss"],
 })
-export class BoardlistComponent implements OnInit {
+export class BoardListComponent implements OnInit {
   @Input() list: BoardList | undefined;
   @Input() boardUuid: string | undefined = "";
 

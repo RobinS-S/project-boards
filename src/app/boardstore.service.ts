@@ -24,7 +24,6 @@ export class BoardStoreService {
   }
 
   get currentBoardItem(): Board | undefined {
-    console.log("get");
     return this.boards.find((b) => b.uuid === this.currentBoard);
   }
 
@@ -83,9 +82,8 @@ export class BoardStoreService {
   addCard(boardUuid: string | undefined, listUuid: string | undefined): void {
     if (boardUuid && listUuid) {
       const list = this.findList(boardUuid, listUuid);
-      console.log(boardUuid);
       if (list) {
-        list.cards.push(new Card(null, "New card", "Description", new Date(), null, null));
+        list.cards.push(new Card(null, "New card", "Description", new Date()));
       }
     }
   }
@@ -109,7 +107,6 @@ export class BoardStoreService {
       try {
         localStorage.setItem("todo_list", JSON.stringify(this.boards));
       } catch {
-        console.log("halp");
       }
     }
   }

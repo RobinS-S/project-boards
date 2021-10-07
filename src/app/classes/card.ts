@@ -5,22 +5,11 @@ export default class Card {
   name = "";
   description = "";
   created: Date | null;
-  updated: Date | null;
-  dueDate: Date | null;
 
-  constructor(
-    uuid: string | null,
-    name: string,
-    description: string,
-    created: Date,
-    updated: Date | null,
-    dueDate: Date | null
-  ) {
+  constructor(uuid: string | null, name: string, description: string, created: Date) {
     this.uuid = !uuid ? uuidv4() : uuid;
     this.name = name;
     this.description = description;
     this.created = created ?? new Date();
-    this.updated = updated;
-    this.dueDate = dueDate;
   }
 }

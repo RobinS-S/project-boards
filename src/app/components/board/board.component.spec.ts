@@ -1,16 +1,26 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { NbEvaIconsModule } from "@nebular/eva-icons";
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbIconModule,
+  NbLayoutModule,
+  NbSidebarModule,
+  NbThemeModule,
+} from "@nebular/theme";
+import { BoardListComponent } from "../boardlist/boardlist.component";
 
-import { BoardComponent } from './board.component';
+import { BoardComponent } from "./board.component";
 
-describe('BoardComponent', () => {
+describe("BoardComponent", () => {
   let component: BoardComponent;
   let fixture: ComponentFixture<BoardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardComponent ]
-    })
-    .compileComponents();
+      imports: [NbThemeModule.forRoot(), NbCardModule, NbButtonModule, NbIconModule, NbEvaIconsModule],
+      declarations: [BoardComponent, BoardListComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +29,7 @@ describe('BoardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

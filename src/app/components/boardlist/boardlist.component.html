@@ -23,7 +23,7 @@
       [listUuid]="list?.uuid"
       [boardUuid]="boardUuid"
       (clickEdit)="clickEdit($event)"
-      (saveCard)="saveCard()"
+      (saveCardEvent)="saveCard()"
     ></app-list-card>
     <div class="px-0 w-100">
       <button class="py-5" fullWidth nbButton (click)="createCard()">

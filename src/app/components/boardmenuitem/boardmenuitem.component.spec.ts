@@ -1,25 +1,43 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ReactiveFormsModule } from "@angular/forms";
+import { NbEvaIconsModule } from "@nebular/eva-icons";
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbCardModule,
+  NbButtonModule,
+  NbIconModule,
+  NbButtonGroupModule,
+  NbFormFieldModule,
+} from "@nebular/theme";
 
-import { BoardmenuitemComponent } from './boardmenuitem.component';
+import { BoardMenuItemComponent } from "./boardmenuitem.component";
 
-describe('BoardmenuitemComponent', () => {
-  let component: BoardmenuitemComponent;
-  let fixture: ComponentFixture<BoardmenuitemComponent>;
+describe("BoardMenuItemComponent", () => {
+  let component: BoardMenuItemComponent;
+  let fixture: ComponentFixture<BoardMenuItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardmenuitemComponent ]
-    })
-    .compileComponents();
+      imports: [
+        NbThemeModule.forRoot(),
+        NbButtonModule,
+        NbIconModule,
+        NbEvaIconsModule,
+        NbButtonGroupModule,
+        NbFormFieldModule,
+      ],
+      declarations: [BoardMenuItemComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoardmenuitemComponent);
+    fixture = TestBed.createComponent(BoardMenuItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

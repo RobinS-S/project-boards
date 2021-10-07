@@ -21,7 +21,7 @@ import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { BoardSelectionComponent } from "./components/boardselection/boardselection.component";
 import { BoardComponent } from "./components/board/board.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { BoardlistComponent } from "./components/boardlist/boardlist.component";
+import { BoardListComponent } from "./components/boardlist/boardlist.component";
 import { ListCardComponent } from "./components/listcard/listcard.component";
 import { FindBoardPipe } from "./find-board-pipe";
 import { BoardMenuItemComponent } from "./components/boardmenuitem/boardmenuitem.component";
@@ -32,7 +32,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AppComponent,
     BoardSelectionComponent,
     BoardComponent,
-    BoardlistComponent,
+    BoardListComponent,
     ListCardComponent,
     FindBoardPipe,
     BoardMenuItemComponent,

@@ -1,16 +1,37 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ReactiveFormsModule } from "@angular/forms";
+import { NbEvaIconsModule } from "@nebular/eva-icons";
+import {
+  NbButtonGroupModule,
+  NbButtonModule,
+  NbCardModule,
+  NbFormFieldModule,
+  NbIconModule,
+  NbLayoutModule,
+  NbThemeModule,
+} from "@nebular/theme";
 
-import { ListCardComponent } from './listcard.component';
+import { ListCardComponent } from "./listcard.component";
 
-describe('ListCardComponent', () => {
+describe("ListCardComponent", () => {
   let component: ListCardComponent;
   let fixture: ComponentFixture<ListCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListCardComponent ]
-    })
-    .compileComponents();
+      imports: [
+        NbThemeModule.forRoot(),
+        NbLayoutModule,
+        NbCardModule,
+        NbButtonModule,
+        ReactiveFormsModule,
+        NbIconModule,
+        NbEvaIconsModule,
+        NbButtonGroupModule,
+        NbFormFieldModule,
+      ],
+      declarations: [ListCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +40,7 @@ describe('ListCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

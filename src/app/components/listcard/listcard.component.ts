@@ -15,7 +15,7 @@ export class ListCardComponent implements OnInit {
   @Input() boardUuid: string | undefined = "";
   @Input() listUuid: string | undefined = "";
   @Output() clickEdit = new EventEmitter<string>();
-  @Output() saveBoard = new EventEmitter<void>();
+  @Output() saveCardEvent = new EventEmitter<void>();
   nameInput = new FormControl("nameinput");
   descriptionInput = new FormControl("descriptioninput");
 
@@ -36,7 +36,7 @@ export class ListCardComponent implements OnInit {
     if (this.nameInput.value.length > 0 && this.card) {
       this.card.name = this.nameInput.value;
       this.card.description = this.descriptionInput.value;
-      this.saveBoard.emit();
+      this.saveCardEvent.emit();
     }
   }
 }

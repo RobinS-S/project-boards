@@ -1,16 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { NbEvaIconsModule } from "@nebular/eva-icons";
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbIconModule,
+  NbListModule,
+  NbThemeModule,
+} from "@nebular/theme";
+import { BoardMenuItemComponent } from "../boardmenuitem/boardmenuitem.component";
 
-import { BoardSelectionComponent } from './boardselection.component';
+import { BoardSelectionComponent } from "./boardselection.component";
 
-describe('BoardSelectionComponent', () => {
+describe("BoardSelectionComponent", () => {
   let component: BoardSelectionComponent;
   let fixture: ComponentFixture<BoardSelectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardSelectionComponent ]
-    })
-    .compileComponents();
+      imports: [NbThemeModule.forRoot(), NbButtonModule, NbIconModule, NbEvaIconsModule, NbListModule, NbCardModule],
+      declarations: [BoardSelectionComponent, BoardMenuItemComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +28,12 @@ describe('BoardSelectionComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it('can create new board', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector(""))
+  }
 });

@@ -15,7 +15,6 @@ export class BoardSelectionComponent {
   constructor(public boardStore: BoardStoreService) {}
 
   clickEdit(boardUuid: string): void {
-    console.log(`clickedit ${boardUuid}`);
     if (this.editing) {
       if (this.editingBoardUuid === boardUuid) {
         this.editing = false;
